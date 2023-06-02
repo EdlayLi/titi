@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: <%= ENV['DB_USERNAME'] %>
+      POSTGRES_PASSWORD: <%= ENV['DB_PASSWORD'] %>
+      POSTGRES_DB: titi
+
+  web:
+    build: .
+    environment:
+      SECRET_KEY_BASE: <%= ENV['KEY_BASE'] %>
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - db

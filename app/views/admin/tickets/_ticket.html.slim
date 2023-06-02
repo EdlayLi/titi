@@ -1,0 +1,29 @@
+#= dom_id ticket
+p 
+  | Билет купил: 
+  = ticket.user.email
+p
+  strong
+    | Number:
+  = ticket.number
+p 
+  | Номер поезда: 
+  = train(ticket).number
+p 
+  | Начальная станция: 
+  = start_station(ticket).title
+p 
+  | Конечная станция:
+  = end_station(ticket).title
+p 
+  | Время отправки:
+  = departure_time(train(ticket), start_station(ticket))
+p 
+  | Время прибытия:
+  = arrival_time(train(ticket), end_station(ticket))
+
+div
+  = link_to "Edit this ticket", edit_admin_ticket_path(ticket)
+  |  | 
+  = link_to "Back to tickets", admin_tickets_path
+  = button_to "Destroy this ticket", [:admin, @ticket], method: :delete

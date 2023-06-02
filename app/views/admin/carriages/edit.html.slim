@@ -1,0 +1,8 @@
+h1
+  = t(".title")
+= render "form", carriage: @carriage
+br
+div
+  = link_to t("common.show"), admin_carriage_path(@carriage)
+  |  | 
+  = link_to t("common.back"), admin_train_path(@carriage.train)

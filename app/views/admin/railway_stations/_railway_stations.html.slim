@@ -1,0 +1,5 @@
+#railway_stations
+  - @railway_stations.each do |railway_station|
+    = railway_station.title
+    p
+      = link_to t("common.show"), [:admin, railway_station]

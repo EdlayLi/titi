@@ -1,0 +1,73 @@
+#= dom_id train
+p
+  strong
+    = t(".number")
+  = train.number
+p
+  = t(".at_station")
+  - if @train.current_station.present?
+    = @train.current_station.title
+  - else
+    =t(".not_at_station")
+p
+  - if @train.route.nil?
+    =t(".not_route")
+  - else
+    =t(".route") 
+    = @train.route.name
+p
+  - if @train.carriages.empty?
+    = t(".not_wagons")
+  - else
+    strong
+    = t(".wagons")
+    - @carriages.each do |car|
+      p
+        = link_to car.number, [:admin ,car.becomes(Carriage)]
+    p
+      = t(".number_economy_wagons")
+      = train.number_carriages(Carriage::TYPES[1])
+    p
+    - unless train.number_carriages(Carriage::TYPES[1]).zero?
+      = t(".number_bottom_places")
+      = train.seats_number(Carriage::TYPES[1], "bottom_places")
+      p
+        = t(".number_top_places")
+        = train.seats_number(Carriage::TYPES[1], "top_places")
+      p
+        = t(".number_side_top_places")
+        = train.seats_number(Carriage::TYPES[1], "side_top_places")
+      p
+        = t(".number_side_bottom_places")
+        = train.seats_number(Carriage::TYPES[1], "side_bottom_places")  
+    p
+      = t(".number_coupe_wagons")
+      = train.number_carriages(Carriage::TYPES[0])
+    p
+      - unless train.number_carriages(Carriage::TYPES[0]).zero?
+        = t(".number_bottom_places")
+        = train.seats_number(Carriage::TYPES[0], "bottom_places")
+        p
+          = t(".number_top_places")
+          = train.seats_number(Carriage::TYPES[0], "top_places")
+    p
+      = t(".number_lux_wagons")
+      = train.number_carriages(Carriage::TYPES[2])
+      p
+        - unless train.number_carriages(Carriage::TYPES[2]).zero?
+          = t(".number_sleep_places")
+          = train.seats_number(Carriage::TYPES[2], "bottom_places")
+    p
+      = t(".number_seated_wagons")
+      = train.number_carriages(Carriage::TYPES[3])
+      p
+        - unless train.number_carriages(Carriage::TYPES[3]).zero?
+          = t(".number_seat_places")
+          = train.seats_number(Carriage::TYPES[3], "seat_places")
+p 
+  = link_to t(".add_wagon"), new_admin_train_carriage_path(@train)
+div
+  = link_to t("common.edit"), edit_admin_train_path(@train)
+  |  | 
+  = link_to t("common.back"), admin_trains_path
+  = button_to t("common.destroy"), [:admin, @train], method: :delete

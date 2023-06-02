@@ -1,0 +1,20 @@
+#= dom_id railway_station
+p
+  strong
+    = t(".title")
+  = railway_station.title
+- if @railway_station.routes.empty?
+  p
+    = t(".station_not_in")
+- else
+  p
+    = t(".station_in") 
+  ul
+    - @railway_station.routes.each do |route|
+      li
+        = route.name
+div
+  = link_to t("common.edit"), edit_admin_railway_station_path(@railway_station)
+  |  | 
+  = link_to t("common.back"), admin_railway_stations_path
+  = button_to t("common.destroy"), [:admin, @railway_station], method: :delete

@@ -1,0 +1,5 @@
+#tickets
+  - @tickets.each do |ticket|
+    = "Number:#{ticket.number}"
+    p
+      = link_to "Show this ticket!", admin_ticket_path(ticket)

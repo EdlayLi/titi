@@ -1,0 +1,50 @@
+#= dom_id route
+p
+  strong
+    = t(".name")
+  = route.name
+p
+  - if @route.railway_stations.empty?
+    = t(".not_stations")
+  - else
+    table
+      thrad
+        tr
+          td[width="100px"]
+            = t(".title") 
+          td
+            = t(".position")
+          td
+            = t(".time")
+      tbody
+        - @route.railway_stations.ordered.each do |station|
+          tr
+            td
+              = station.title
+            td
+              = form_tag update_position_admin_railway_station_path(station), method: :patch do
+                = number_field_tag :position, station.position_in(@route)
+                = hidden_field_tag :route_id, @route.id
+                = submit_tag t("common.edit")
+            td
+              = form_tag update_time_admin_railway_station_path(station), method: :patch do
+                = time_field_tag :arrival_time, station.time_in(@route, "arrival_time")
+                = hidden_field_tag :route_id, @route.id
+
+                = time_field_tag :departure_time, station.time_in(@route, "departure_time")
+                = hidden_field_tag :route_id, @route.id
+                = submit_tag t("common.edit")
+
+p 
+  - if @route.trains.empty?
+    = t(".not_trains")
+  - else
+    = t(".trains")
+    - @route.trains.each do |train|
+      li
+        = train.number
+div
+  = link_to t("common.edit"), edit_admin_route_path(@route)
+  |  | 
+  = link_to t("common.back"), admin_routes_path
+  = button_to t("common.destroy"), [:admin, @route], method: :delete

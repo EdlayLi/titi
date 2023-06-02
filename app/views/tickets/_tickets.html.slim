@@ -1,0 +1,6 @@
+#tickets
+  - @tickets.each do |ticket|
+    = t(".number")
+    = ticket.number
+    p
+      = link_to t("common.show"), ticket

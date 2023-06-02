@@ -1,0 +1,7 @@
+= form_with(model: [:admin, railway_station]) do |form|
+  = render 'common/errors', resource: @railway_station
+  div
+    = form.label :title, style: "display: block"
+    = form.text_field :title
+  div
+    = form.submit t(".submit", action: @railway_station.new_record? ? t("common.create") : t("common.edit"))

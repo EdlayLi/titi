@@ -1,0 +1,28 @@
+#= dom_id ticket
+p 
+  = t(".ticket_buyer")
+  = ticket.user.email
+p
+  strong
+    = t(".number_ticket")
+  = ticket.number
+p 
+  = t(".number_train")
+  = train(ticket).number
+p 
+  = t(".start_station")
+  = start_station(ticket).title
+p 
+  = t(".end_station")
+  = end_station(ticket).title
+p 
+  = t(".departure_time")
+  = departure_time(train(ticket), start_station(ticket))
+p 
+  = t(".arrival_time")
+  = arrival_time(train(ticket), end_station(ticket))
+
+div
+  = button_to t("common.back"), tickets_path, class: "btn btn-primary", method: :get
+p
+  = button_to t("common.destroy"), @ticket, class: "btn btn-primary",  method: :delete

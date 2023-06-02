@@ -1,0 +1,13 @@
+= form_with(model: ticket) do |form|
+  = render 'common/errors', resource: @ticket
+  = form.hidden_field :train_id, value: params[:train_id]
+  = form.hidden_field :start_station_id, value: params[:start_station_id]
+  = form.hidden_field :end_station_id, value: params[:end_station_id]
+  div
+    = t(".passport_input")
+    = form.label :passport_series, style: "display: block"
+    = form.text_field :passport_series
+    = form.label :passport_number, style: "display: block"
+    = form.text_field :passport_number
+  div
+    = form.submit t(".submit", action: @ticket.new_record? ? t("common.create") : t("common.edit")), style: "margin-top: 10px;"

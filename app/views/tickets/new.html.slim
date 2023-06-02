@@ -1,0 +1,6 @@
+h1
+  = t(".title")
+= render "form", ticket: @ticket
+br
+div
+  = button_to t("common.back"), tickets_path, class: "btn btn-primary", method: :get

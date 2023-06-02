@@ -1,0 +1,17 @@
+stages:
+  - test
+
+rubocop:
+  script:
+    - |
+      CHANGED_FILES=$(git diff-tree --no-commit-id --name-only --diff-filter=AM  -r HEAD)
+      if [[ -n ${CHANGED_FILES} ]]; then
+        RUBY_FILES=$(echo "${CHANGED_FILES}" | grep -E '\.rb$')
+        if [[ -n ${RUBY_FILES} ]]; then
+          echo "${RUBY_FILES}" | xargs rubocop
+        else
+          echo 'Изменений в файлах .rb нет'
+        fi
+      else
+        echo 'Измененные файлы не найдены'
+      fi

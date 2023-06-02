@@ -1,0 +1,37 @@
+h2
+  = t(".title")
+p
+  - if @trains.empty?
+    = t(".not_trains")
+  - else
+    table.table.table-striped.table-bordered.table-hover
+      thead
+        tr
+          th
+            = t(".number_train")
+          th
+            = t(".departure_station")
+          th
+            = t(".departure_time")
+          th
+            = t(".arrival_station")
+          th
+            = t(".arrival_time")
+      tbody
+        - @trains.each do |train|
+          - if train.search_station_position(@start_station) < train.search_station_position(@end_station)
+            tr
+              td
+                = train.number
+              td
+                = @start_station.title
+              td
+                = departure_time(train, @start_station)
+              td
+                = @end_station.title
+              td
+                = arrival_time(train, @end_station)
+              td
+                = link_to t(".buy"), new_ticket_path(train_id: train.id, start_station_id: @start_station.id, end_station_id: @end_station.id)
+p
+  = button_to t("common.back"), root_path, class: "btn btn-primary", method: :get

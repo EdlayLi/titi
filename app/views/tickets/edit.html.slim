@@ -1,0 +1,8 @@
+h1
+  = t(".title")
+= render "form", ticket: @ticket
+br
+div
+  = link_to t("common.show"), @ticket
+  |  | 
+  = button_to t("common.back"), tickets_path, class: "btn btn-primary", method: :get

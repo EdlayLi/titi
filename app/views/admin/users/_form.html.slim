@@ -1,0 +1,10 @@
+= form_with(model: [:admin, @user]) do |form|
+  = render 'common/errors', resource: @user
+  div
+    = form.label :first_name, style: "display: block"
+    = form.text_field :first_name
+  div
+    = form.label :last_name, style: "display: block"
+    = form.text_field :last_name
+  div
+    = form.submit

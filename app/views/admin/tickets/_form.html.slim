@@ -1,0 +1,31 @@
+= form_with(model: [:admin, @ticket]) do |form|
+  = render 'common/errors', resource: @ticket
+  p
+    div
+      = form.label "Выберите поезд", style: "display: block"
+      = form.collection_select :train_id, Train.all, :id, :number
+  p
+    div
+      = form.label "Выберите начальную станцию", style: "display: block"
+      = form.collection_select :start_station_id, RailwayStation.all, :id, :title
+  p
+    div
+      = form.label "Выберите конечную станцию", style: "display: block"
+      = form.collection_select :end_station_id, RailwayStation.all, :id, :title
+  p
+    div
+      = form.label "Укажите номер билета", style: "display: block"
+      = form.text_field :number
+  p
+    div
+      = form.label "Выберите Пользователя", style: "display: block"
+      = form.collection_select :user_id, User.all, :id, :first_name
+  p
+    div
+      | Введите серию и номер паспорта
+      = form.label :passport_series, style: "display: block"
+      = form.text_field :passport_series
+      = form.label :passport_number, style: "display: block"
+      = form.text_field :passport_number
+  div
+    = form.submit

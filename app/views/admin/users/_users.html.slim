@@ -1,0 +1,5 @@
+#users
+  - @users.each do |user|
+    = "Name:#{user.first_name} #{user.last_name}"
+    p
+      = link_to "Show this user", [:admin, user]

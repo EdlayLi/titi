@@ -1,0 +1,5 @@
+#routes
+  - @routes.each do |route|
+    = route.name
+    p
+      = link_to t("common.show"), [:admin, route]

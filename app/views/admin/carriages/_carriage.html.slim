@@ -1,0 +1,19 @@
+#= dom_id carriage
+p
+  strong
+    = t(".number")
+  = carriage.number
+p
+  = t(".type")
+  = carriage.type
+p
+  = t(".train")
+  = carriage.train.number
+
+  = render @carriage.type.underscore
+
+div
+  = link_to t("common.edit"), edit_admin_carriage_path(@carriage)
+  |  | 
+  = link_to t(".to_train"), admin_train_path(@carriage.train)
+  = button_to t("common.destroy"), admin_carriage_path(@carriage), method: :delete

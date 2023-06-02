@@ -1,0 +1,214 @@
+ru:
+  common:
+    back: "Назад"
+    show: "Показать"
+    edit: "Изменить"
+    destroy: "Удалить"
+    create: "Создать"
+    errors: "При заполнении формы возникли ошибки"
+    hello: "Привет "
+    update: "Обновить"
+    sign_in: "Войти"
+    sign_out: "Выйти"
+  mailer:
+    buy_ticket: "Покупка билета"
+    delete_ticket: "Возврат билета"
+  layouts:
+    footer: "©2023 titi.aye - Аналог tutu.ru"
+    admin:
+      title: "Titi - Админка"
+      account: "Аккаунт: "
+      my_tickets: "Мои билеты"
+      admin: "Админка"
+    application:
+      title: "Titi - Поиск билетов"
+      account: "Аккаунт: "
+      my_tickets: "Мои билеты"
+  searches:
+    form:
+      select_stations: "Выберете начальную и конечную станцию:"
+      submit: "Поиск"
+      start_station: "Начальная станция"
+      end_station: "Конечная станция"
+    result:
+      title: "Список поездов"
+      number_train: "Номер поезда"
+      departure_time: "Время отправки"
+      arrival_time: "Время прибытия"
+      departure_station: "Cтанция отправки"
+      arrival_station: "Станция прибытия"
+      buy: "Купить"
+      not_trains: "Поездов по данному направлению не найдено"
+    show:
+      title: "Поиск билетов"
+  tickets:
+    tickets:
+      number: "Номер: "
+    form:
+      passport_input: "Введите серию и номер паспорта: "
+      submit: "%{action} билет"
+    new:
+      title: "Регистрация билета"
+    ticket:
+      ticket_buyer: "Билет купил: "
+      number_ticket: "Номер билета: "
+      number_train: "Номер поезда: "
+      start_station: "Начальная станция: "
+      end_station: "Конечная станция: "
+      departure_time: "Время отправки: "
+      arrival_time: "Время прибытия: "
+    edit:
+      title: "Изменение билета"
+    index:
+      title: "Мои билеты:"
+  devise:
+    confirmations:
+      new:
+        title: "Повторная отправка инструкций по подтверждению"
+    mailer:
+      confirmation_instructions:
+        title: "Добро пожаловать"
+        confirmation: "Вы можете подтвердить электронную почту своего аккаунта по ссылке ниже:"
+        confirm: "Подтвердить учетную запись"
+      email_changed:
+        mail_will_changed: "Мы связываемся с вами, чтобы уведомить вас о том, что ваша электронная почта будет изменена на "
+        mail_has_changed: "Мы связываемся с вами, чтобы уведомить вас о том, что ваша электронная почта была изменена на "
+      password_change:
+        password_has_changed: "Мы связываемся с вами, чтобы уведомить вас о том, что ваш пароль был изменен."
+      reset_password_instructions:
+        requested_link: "Запросили ссылку для изменения пароля. Вы можете сделать это по ссылке ниже."
+        change_pass: "Изменить пароль"
+        ignor_mail: "Если вы не запрашивали этого, пожалуйста, проигнорируйте это письмо."
+        not_change: "Ваш пароль не изменится, пока вы не перейдете по ссылке выше и не создадите новый."
+      unlock_instructions:
+        been_locked: "Ваш аккаунт был заблокирован из-за чрезмерного количества неудачных попыток входа в систему."
+        unlock_account: "Нажмите на ссылку ниже, чтобы разблокировать свой аккаунт:"
+        unlock_link: "Разблокировать аккаунт"
+    passwords:
+      edit:
+        title: "Изменение паролья"
+        new_pass: "Новый пароль"
+        min_characters: " минимальное количество символов"
+        confirm_pass: "Потвердить новый пароль"
+        change_pass: "Изменить пароль"
+      new:
+        title: "Забыли пароль?"
+        instructions: "Пришлите мне инструкции по сбросу пароля"
+    registrations:
+      edit:
+        confirmation: "В настоящее время ожидает подтверждения: "
+        leave_blank: "оставьте пустым, если вы не хотите его менять"
+        min_characters: " минимальное количество символов"
+        current_pass: "нам нужен ваш текущий пароль для подтверждения изменений"
+        cancel_account: "Отменить мой аккаунт"
+        proof: "Вы уверены?"
+      new:
+        title: "Регистация"
+        sign_up: "Зарегистрироваться"
+        min_characters: " минимальное количество символов"
+    sessions:
+      new:
+        title: "Вход"
+        log_in: "Войти"
+        remember_me: "Запомнить меня"
+        password: "Пароль"
+    shared:
+      links:
+        log_in: "Войти"
+        sign_up: "Зарегистрироваться"
+        forgot_pass: "Забыли пароль?"
+        not_receiv_confirmation: "Не получили инструкции по подтверждению?"
+        not_receive_unlock: "Не получили инструкции по разблокировке?"
+        sign_in_with: "Войти с помощью"
+    unlocks:
+      new:
+        title: "Повторная отправка инструкций по разблокировке"
+  admin:
+    welcome:
+      index:
+        title: "Панель управления"
+        stations: "Станции"
+        trains: "Поезда"
+        routes: "Маршруты"
+        users: "Пользователи"
+        tickets: "Билеты"
+    railway_stations:
+      index:
+        title: "Станции"
+        new: "Новая станция"
+      new:
+        title: "Новая станция"
+      edit:
+        title: "Изменение станции"
+      form:
+        submit: "%{action} станцию"
+      railway_station:
+        title: "Название станции: "
+        station_in: "Станция входит в следующие маршруты:"
+        station_not_in: "Станция не входит ни в один маршрут"
+    trains:
+      index:
+        title: "Поезда"
+        new: "Новый поезд"
+      new:
+        title: "Новый поезд"
+      edit:
+        title: "Изменение поезда"
+      form:
+        submit: "%{action} поезд"
+        sort: "Отсортировать вагоны из хвоста поезда"
+      train:
+        number: "Номер: "
+        at_station: "На станции: "
+        not_at_station: "Поезу не указана станция"
+        route: "Назначен маршрут: "
+        not_route: "Поезду не назначен маршрут"
+        wagons: "Вагоны: "
+        not_wagons: "У поезда нет вагонов"
+        add_wagon: "Добавить вагон"
+        number_economy_wagons: "Количество плацкартных вагонов: "
+        number_coupe_wagons: "Количество купейных вагонов: "
+        number_lux_wagons: "Количество люкс вагонов: "
+        number_seated_wagons: "Количество сидячих вагонов: "
+        number_bottom_places: "Количество нижних мест: "
+        number_top_places: "Количество верхних мест: "
+        number_sleep_places: "Количество спальных мест: "
+        number_seat_places: "Количество сидячих мест: "
+        number_side_bottom_places: "Количество боковых нижних мест: "
+        number_side_top_places: "Количество боковых верхних мест: "
+    carriages:
+      number_bottom_places: "Количество нижних мест: "
+      number_top_places: "Количество верхних мест: "
+      number_sleep_places: "Количество спальных мест: "
+      number_seat_places: "Количество сидячих мест: "
+      number_side_bottom_places: "Количество боковых нижних мест: "
+      number_side_top_places: "Количество боковых верхних мест: "
+      new:
+        title: "Новый вагон"
+      form:
+        submit: "%{action} вагон"
+      carriage:
+        number: "Номер: "
+        type: "Тип: "
+        train: "Поезд: "
+        to_train: "Перейти к поезду"
+      edit:
+       title: "Изменение вагона"
+    routes:
+      index:
+        title: "Маршруты"
+        new: "Новый маршрут"
+      form:
+        submit: "%{action} маршрут"
+      route:
+        name: "Имя маршрута: "
+        not_stations: "У маршрута нет станций"
+        title: "Название"
+        position: "Позиция"
+        time: "Время прибытия/Время отпавки"
+        not_trains: "У маршрута нет поездов"
+        trains: "Поезда на маршруте:"
+      edit:
+        title: "Изменение маршрута"
+      new:
+        title: "Новый маршрут"

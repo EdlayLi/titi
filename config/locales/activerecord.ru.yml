@@ -1,0 +1,63 @@
+ru:
+  activerecord:
+    models:
+      tickets_mailer:
+        buy_ticket: "Вы купили билет."
+        delete_ticket: "Билет был удален"
+      railway_station: "Станция"
+      train: "Поезд"
+      route: "Маршрут"
+      search: "Поиск"
+      ticket: "Билет"
+      user: "Пользователь"
+      carriage: "Вагон"
+      seated_carriage: "Сидячий вагон"
+      ecomomy_carriage: "Плацкартный вагон"
+      coupe_carriage: "Купейный вагон"
+      lux_carriage: "Люкс вагон"
+    attributes:
+      railway_station:
+        title: "Название"
+      train:
+        number: "Номер"
+        current_station: "Текущая станция"
+        sort_order: "Порядок сортировки"
+      route:
+        name: "Название"
+      ticket:
+        train: "Поезд"
+        number: "Номер"
+        passport_series: "Серия паспорта"
+        passport_number: "Номер паспорта"
+      user:
+        email: "Почта"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+      carriage:
+        number: "Номер"
+        type: "Тип вагона"
+        top_places: "Верхние места"
+        bottom_places: "Нижние места"
+        side_top_places: "Боковые верхние места"
+        side_bottom_places: "Боковые нижние места"
+        seat_places: "Сидения"
+        position: "Позиция"
+    errors:
+      messages:
+        blank: " не может быть пустым"
+        invalid: " недопустимый объект"
+        not_found: " не найдено"
+        not_saved: " не сохранено"
+        save: " ошибка при сохранении"
+        too_short: " слишком короткий"
+        too_long: " слишком длинный"
+        taken: " не уникально"
+        invalid_type: " недопустимый тип"
+        invalid_value: " недопустимое значение"
+        invalid_format: " недопустимый формат"
+        invalid_attribute_value: " недопустимое значение атрибута"
+        invalid_association: " недопустимая ассоциация"
+        invalid_url: " недопустимая ассоциация"
+        invalid_email: " недопустимый email"

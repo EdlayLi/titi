@@ -1,0 +1,20 @@
+= form_with(model: [:admin, @train]) do |form|
+  = render 'common/errors', resource: @train
+  div
+    = form.label :number, style: "display: block"
+    = form.text_field :number
+  div
+    p 
+      = form.label :Route, style: "display: block"
+      = form.collection_select :route_id, Route.all, :id, :name
+  div
+    p 
+      = form.label :current_station, style: "display: block"
+      = form.collection_select :current_station_id, RailwayStation.all, :id, :title
+  div
+    p 
+      = form.check_box :sort_order
+      = form.label :sort_order, t(".sort")
+  div
+    p
+      = form.submit t(".submit", action: @train.new_record? ? t("common.create") : t("common.edit"))

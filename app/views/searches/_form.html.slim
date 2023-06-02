@@ -1,0 +1,15 @@
+table
+  thrad
+    tr
+      = t(".select_stations")
+  tbody
+    p
+      tr
+        = form_tag(result_search_path, method: :get, class: "form-inline") do
+          .form-group
+            = label_tag(:start_station_id, t(".start_station"))
+            = select_tag(:start_station_id, options_for_select(@stations.map{ |station| [station.title, station.id] }), class: "form-control")
+          .form-group
+            = label_tag(:end_station_id, t(".end_station"))
+            = select_tag(:end_station_id, options_for_select(@stations.map{ |station| [station.title, station.id] }), class: "form-control")
+          = submit_tag t(".submit"), class: "btn btn-primary", method: :get, style: "margin-top: 10px;"
